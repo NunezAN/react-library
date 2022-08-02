@@ -2,7 +2,15 @@ import React from 'react';
 import {books} from "../data"
 import Book from "./ui/Book"
 
+
+
 const Discounted = () => {
+    
+    function getDiscounted(){
+        const discountedBooks = books.filter(book => book.salePrice).slice(0,8);
+        return discountedBooks.map((book) => <Book key={book.id} book={book} />)
+    }
+
     return (
         <section id="recent">
             <div className="container">
@@ -12,7 +20,7 @@ const Discounted = () => {
                     </h2>
                     <div className="books">
                         {
-                        books.map(book => <Book book={book} key={book.id}/>)
+                        getDiscounted()
                         }
                     </div>
                 </div>

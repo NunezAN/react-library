@@ -5,14 +5,13 @@ const Book = ({ book }) => {
 
     function getRating(){
         const wholeRating = Math.trunc(book.rating)
-        let rating = new Array(wholeRating).fill(0).map(()=><FontAwesomeIcon icon="star"></FontAwesomeIcon>);
-
-        if(!book.rating %1){
-            rating.push(<FontAwesomeIcon icon="star-half-alt"></FontAwesomeIcon>)
-        }  
+        let rating = new Array(wholeRating).fill(0).map((_,index)=><FontAwesomeIcon icon="star" key={index}></FontAwesomeIcon>);
+        if(!Number.isInteger(book.rating)){
+            rating.push(<FontAwesomeIcon icon="star-half-alt" key={rating.length}></FontAwesomeIcon>)
+        } 
         return rating;
     }
-    getRating();
+
   return (
     <div className="book">
       <a href="">
