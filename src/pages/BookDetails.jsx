@@ -5,17 +5,10 @@ import Book from "../components/ui/Book";
 import Price from "../components/ui/Price";
 import Rating from "../components/ui/Rating";
 
-const BookDetails = ({ books }) => {
+const BookDetails = ({ books, addToCart}) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
 
-  function updateCart() {
-    console.log("cart +1");
-    const cart = document.querySelector(".nav__icon");
-    console.log(cart);
-    const cartLength = "<span className=`cart__length`>2</span>"
-    cart.append(cartLength);
-  }
 
   return (
     <div id="books__body">
@@ -47,7 +40,7 @@ const BookDetails = ({ books }) => {
                   <div className="book__summary--title">Summary</div>
                   <p className="book__summary--para">{book.description}</p>
                 </div>
-                <button className="btn" onClick={updateCart}>
+                <button className="btn" onClick={()=> addToCart(book)}>
                   Add to cart
                 </button>
               </div>

@@ -35,7 +35,7 @@ const Cart = ({ books }) => {
                     </div>
                   </div>
                   <div className="cart__quantity">
-                    <input type="number" min={0} max={99} class="cart__input"/>
+                    <input type="number" min={0} max={99} className="cart__input"/>
                   </div>
                   <div className="cart__total">{books[0].originalPrice}</div>
                 </div>
