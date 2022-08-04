@@ -7,6 +7,7 @@ export const books = [
     originalPrice: 49.95,
     salePrice: 14.95,
     rating: 4.5,
+    description:"Cracking the Coding Interview: 189 Programming Questions and Solutions is a book by Gayle Laakmann McDowell about coding interviews.It describes typical problems in computer science that are often asked during coding interviews, typically on a whiteboard during job interviews at big technology companies such as Google, Apple, Microsoft, Amazon.com, Facebook and Palantir Technologies.First published in 2008, it has been translated into seven languages: Russian, Simplified Chinese, Traditional Chinese, Japanese, Polish, Spanish, and Korean. It describes solutions to common problems set in coding job interviews.The sixth edition of the textbook was published in 2015."
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ export const books = [
     originalPrice: 39,
     salePrice: null,
     rating: 5,
+    description:"Atomic Habits is the definitive guide to breaking bad behaviors and adopting good ones in four steps, showing you how small, incremental, everyday routines compound into massive, positive change over time.",
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ export const books = [
     originalPrice: 29,
     salePrice: null,
     rating: 5,
+    description:"Can’t Hurt Me is the story of David Goggins, who went from being overweight and depressed to becoming a record-breaking athlete, inspiring military leader, and world-class personal trainer.",
   },
   {
     id: 4,
@@ -31,6 +34,7 @@ export const books = [
     originalPrice: 44,
     salePrice: 19,
     rating: 4.5,
+    description:"Deep Work is a guide on how to develop the superpower of deep focus on cognitively-demanding tasks in a distracted world. These efforts create new value, improve your skill, and are hard to replicate. It covers many examples from real-world experiences and actionable items make implementing these ideas quite straightforward.",
   },
   {
     id: 5,
@@ -39,6 +43,7 @@ export const books = [
     originalPrice: 32,
     salePrice: null,
     rating: 5,
+    description:"The 10X Rule breaks down the anatomy of extraordinary success by first pointing out what’s wrong with shooting for average, why you should for ten times more when tackling your goals and how to back up your new, bold targets with the right actions.",
   },
   {
     id: 6,
@@ -47,6 +52,7 @@ export const books = [
     originalPrice: 70,
     salePrice: 12.5,
     rating: 5,
+    description:"Sell or Be Sold is based on the premise that every day we are selling: the child who wants a piece of candy and needs to convince his/her parents to comply, the teacher to the student on why learning trigonometry is important and the sales professional who closes the deal with a prospect. With this in mind, the ability to communicate, persuade, negotiate and close a deal is important regardless of your profession. Grant takes you from amateur to professional by explaining the key differences at each stage, how to make the transition from average to great and provides perspectives needed to help you be successful at “selling” in your chosen endeavor.  With each paragraph I read I felt like I was learning something new and unlearning less effective habits. No person, whether they are a sales professional or not should miss out on this book.",
   },
   {
     id: 7,
@@ -55,6 +61,7 @@ export const books = [
     originalPrice: 11,
     salePrice: 10,
     rating: 4,
+    description:"Rich Dad Poor Dad tells the story of a boy with two fathers, one rich, one poor, to help you develop the mindset and financial knowledge you need to build a life of wealth and freedom.",
   },
   {
     id: 8,
@@ -63,6 +70,7 @@ export const books = [
     originalPrice: 38,
     salePrice: 17.95,
     rating: 4.5,
+    description:"The Cashflow Quadrant is a simple model designed by Robert Kiyosaki. It shows there are four different paths to becoming wealthy. Importantly, some of these four paths are more efficient. The quadrant that you belong to depends on where you acquire most of your income. Either you are an employee (E), a small business owner or self-employed (S), a big business owner (B), or an investor (I). An E works for the system. An S is the system. A B creates, owns and controls the system. An I invests money into the system.",
   },
   {
     id: 9,
@@ -71,6 +79,7 @@ export const books = [
     originalPrice: 35,
     salePrice: 19.95,
     rating: 4.5,
+    description:"The 48 Laws Of Power draws on many of history’s most famous power quarrels to show you what power looks like, how you can get it, what to do to defend yourself against the power of others and, most importantly, how to use it well and keep it.",
   },
   {
     id: 10,
@@ -79,6 +88,7 @@ export const books = [
     originalPrice: 40,
     salePrice: null,
     rating: 5,
+    description:"The 5 Second Rule is a simple tool that undercuts most of the psychological weapons your brain employs to keep you from taking action, which will allow you to procrastinate less, live happier and reach your goals.",
   },
   {
     id: 11,
@@ -87,6 +97,7 @@ export const books = [
     originalPrice: 30,
     salePrice: 20,
     rating: 5,
+    description:"How to Win Friends and Influence People is a self-help book written by Dale Carnegie, published in 1936. Over 30 million copies have been sold worldwide, making it one of the best-selling books of all time. Carnegie had been conducting business education courses in New York since 1912.In 1934, Leon Shimkin of the publishing firm Simon & Schuster took one of Carnegie's 14-week courses on human relations and public speaking; afterward, Shimkin persuaded Carnegie to let a stenographer take notes from the course to be revised for publication. The initial five thousand copies of the book sold exceptionally well, going through 17 editions in its first year alone.",
   },
   {
     id: 12,
@@ -95,5 +106,6 @@ export const books = [
     originalPrice: 30,
     salePrice: 12.95,
     rating: 4.5,
+    description:"Mastery debunks the myth of talent and shows you there are proven steps you can take to achieve mastery in a discipline of your own choosing, by analyzing the paths of some history’s most famous masters, such as Einstein, Darwin and Da Vinci.",
   },
 ];

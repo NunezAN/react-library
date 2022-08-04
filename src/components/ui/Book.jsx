@@ -1,43 +1,27 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import Rating from "./Rating";
+import Price from "./Price";
 
 const Book = ({ book }) => {
-
-    function getRating(){
-        const wholeRating = Math.trunc(book.rating)
-        let rating = new Array(wholeRating).fill(0).map((_,index)=><FontAwesomeIcon icon="star" key={index}></FontAwesomeIcon>);
-        if(!Number.isInteger(book.rating)){
-            rating.push(<FontAwesomeIcon icon="star-half-alt" key={rating.length}></FontAwesomeIcon>)
-        } 
-        return rating;
-    }
-
   return (
     <div className="book">
-      <a href="">
+      <Link to={`/books/${book.id}`}>
         <figure className="book__img--wrapper">
           <img src={book.url} alt="" className="book__img" />
         </figure>
-      </a>
+      </Link>
       <div className="book__title">
-        <a href="/" className="book__title--link">
+        <Link to={`/books/${book.id}`} className="book__title--link">
           {book.title}
-        </a>
+        </Link>
       </div>
       <div className="book__ratings">
-        {getRating()}
+        <Rating rating={book.rating}></Rating>
       </div>
       <div className="book__price">
-        {book.salePrice ? (
-          <>
-            <span className="book__price--normal">
-              ${book.originalPrice.toFixed(2)}
-            </span>
-            ${book.salePrice.toFixed(2)}
-          </>
-        ) : (
-            <>${book.originalPrice.toFixed(2)}</>
-        )}
+        {<Price originalPrice={book.originalPrice} salePrice={book.salePrice}/>}
       </div>
     </div>
   );
