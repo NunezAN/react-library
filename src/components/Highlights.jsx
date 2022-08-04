@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import Highlight from "./ui/Highlight";
-import Highlight from "./ui/Highlight.jsx";
+import Highlight from "./ui/Highlight1";
 
 const Highlights = () => {
   return (
