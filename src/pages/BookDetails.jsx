@@ -8,6 +8,15 @@ import Rating from "../components/ui/Rating";
 const BookDetails = ({ books }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
+
+  function updateCart() {
+    console.log("cart +1");
+    const cart = document.querySelector(".nav__icon");
+    console.log(cart);
+    const cartLength = "<span className=`cart__length`>2</span>"
+    cart.append(cartLength);
+  }
+
   return (
     <div id="books__body">
       <main id="books__main">
@@ -23,7 +32,7 @@ const BookDetails = ({ books }) => {
             </div>
             <div className="book__selected">
               <figure className="book__selected--figure">
-                <img src={book.url} alt="" />
+                <img src={book.url} alt="" className="book__selected--img"/>
               </figure>
               <div className="book__selected--description">
                 <h2 className="book__selected--title">{book.title}</h2>
@@ -38,7 +47,9 @@ const BookDetails = ({ books }) => {
                   <div className="book__summary--title">Summary</div>
                   <p className="book__summary--para">{book.description}</p>
                 </div>
-                <button className="btn">Add to cart</button>
+                <button className="btn" onClick={updateCart}>
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
