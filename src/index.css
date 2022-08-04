@@ -654,10 +654,15 @@ select {
   color: white;
   display: flex;
 }
-
+/* .cart__body .cart__quantity{
+  width: 30%;
+}.cart__body .cart__book{
+  width: 57%;
+} */
 .cart__item {
   margin: 24px;
   display: flex;
+  justify-content: space-around;
   padding-right: 8px;
 }
 
@@ -669,6 +674,7 @@ select {
   width: 60%;
   display: flex;
 }
+
 
 .cart__quantity {
   width: 40%;
@@ -683,6 +689,13 @@ select {
   align-items: center;
   justify-content: flex-end;
   font-size: 18px;
+}
+.cart__price{
+  width: 100%;
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .cart__input {

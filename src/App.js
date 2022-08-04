@@ -20,11 +20,18 @@ function addToCart(book){
           ...cartBook, quantity: cartBook.quantity + 1,
         }
       }
-    }))
-  } 
+      else{
+        return cartBook;
+      }
+    }))} 
   else{
   setCart([...cart,{...book,quantity: 1}]);
 }
+}
+function getQuantity(){
+  let quantity = 0;
+  cart.forEach(cartBook=>quantity += cartBook.quantity);
+  return quantity;
 }
 
   useEffect(() => {
@@ -34,7 +41,7 @@ function addToCart(book){
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav quantity={getQuantity()}/>
         <Route path="/" exact component={Home} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
@@ -42,7 +49,7 @@ function addToCart(book){
           exact
           render={() => <BookDetails books={books} addToCart={addToCart} />}
         />
-        <Route path="/cart" exact render={() => <Cart books={books}></Cart>} />
+        <Route path="/cart" exact render={() => <Cart cart={cart}></Cart>} />
         <Footer />
       </div>
     </Router>
