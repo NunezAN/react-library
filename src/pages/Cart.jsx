@@ -2,7 +2,7 @@ import React from "react";
 import Price from "../components/ui/Price";
 import TotalPrice from "../components/ui/TotalPrice";
 
-const Cart = ({ cart , updateQuantity }) => {
+const Cart = ({ cart , updateQuantity , removeBook }) => {
     let subtotal = getSubTotal();
     let tax = getTax();
     function getSubTotal(){
@@ -52,7 +52,7 @@ const Cart = ({ cart , updateQuantity }) => {
                               salePrice={cartBook.salePrice}
                             ></Price>
                           </span>
-                          <button className="cart__book--remove">Remove</button>
+                          <button className="cart__book--remove" onClick={()=>removeBook(cartBook)}>Remove</button>
                         </div>
                       </div>
                       <div className="cart__quantity">

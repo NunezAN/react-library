@@ -36,10 +36,6 @@ function App() {
     return quantity;
   }
 
-  function removeBook(book){
-    console.log(book);
-  }
-
   function updateQuantity(book, valueQuantity){
      setCart(cart.map(cartBook =>{
       if(cartBook.id === book.id){
@@ -49,6 +45,10 @@ function App() {
         return cartBook;
       }
      }));
+  }
+
+  function removeBook(book){
+    setCart(cart.filter(cartBook => cartBook.id != book.id));
   }
 
   useEffect(() => {
@@ -66,7 +66,7 @@ function App() {
           exact
           render={() => <BookDetails books={books} addToCart={addToCart} />}
         />
-        <Route path="/cart" exact render={() => <Cart cart={cart} updateQuantity={updateQuantity}></Cart>} />
+        <Route path="/cart" exact render={() => <Cart cart={cart} updateQuantity={updateQuantity} removeBook={removeBook}></Cart>} />
         <Footer />
       </div>
     </Router>
