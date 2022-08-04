@@ -11,28 +11,45 @@ import Cart from "./pages/Cart";
 function App() {
   const [cart, setCart] = useState([]);
 
-function addToCart(book){
-  const dupeItem = cart.find(cartBook => +cartBook.id === +book.id)
-  if(dupeItem){
-    setCart(cart.map(cartBook => {
-      if(cartBook.id === dupeItem.id){
-        return {
-          ...cartBook, quantity: cartBook.quantity + 1,
-        }
+  function addToCart(book) {
+    const dupeItem = cart.find((cartBook) => +cartBook.id === +book.id);
+    if (dupeItem) {
+      setCart(
+        cart.map((cartBook) => {
+          if (cartBook.id === dupeItem.id) {
+            return {
+              ...cartBook,
+              quantity: cartBook.quantity + 1,
+            };
+          } else {
+            return cartBook;
+          }
+        })
+      );
+    } else {
+      setCart([...cart, { ...book, quantity: 1 }]);
+    }
+  }
+  function getQuantity() {
+    let quantity = 0;
+    cart.forEach((cartBook) => (quantity += (+cartBook.quantity)));
+    return quantity;
+  }
+
+  function removeBook(book){
+    console.log(book);
+  }
+
+  function updateQuantity(book, valueQuantity){
+     setCart(cart.map(cartBook =>{
+      if(cartBook.id === book.id){
+        return {...cartBook, quantity: valueQuantity};
       }
       else{
         return cartBook;
       }
-    }))} 
-  else{
-  setCart([...cart,{...book,quantity: 1}]);
-}
-}
-function getQuantity(){
-  let quantity = 0;
-  cart.forEach(cartBook=>quantity += cartBook.quantity);
-  return quantity;
-}
+     }));
+  }
 
   useEffect(() => {
     console.log(cart);
@@ -41,7 +58,7 @@ function getQuantity(){
   return (
     <Router>
       <div className="App">
-        <Nav quantity={getQuantity()}/>
+        <Nav quantity={getQuantity()} />
         <Route path="/" exact component={Home} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
@@ -49,7 +66,7 @@ function getQuantity(){
           exact
           render={() => <BookDetails books={books} addToCart={addToCart} />}
         />
-        <Route path="/cart" exact render={() => <Cart cart={cart}></Cart>} />
+        <Route path="/cart" exact render={() => <Cart cart={cart} updateQuantity={updateQuantity}></Cart>} />
         <Footer />
       </div>
     </Router>

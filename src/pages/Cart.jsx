@@ -2,7 +2,7 @@ import React from "react";
 import Price from "../components/ui/Price";
 import TotalPrice from "../components/ui/TotalPrice";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart , updateQuantity }) => {
     let subtotal = getSubTotal();
     let tax = getTax();
     function getSubTotal(){
@@ -62,6 +62,7 @@ const Cart = ({ cart }) => {
                           max={99}
                           className="cart__input"
                           value={cartBook.quantity}
+                          onChange={(event)=>updateQuantity(cartBook,event.target.value)}
                         ></input>
                       </div>
                       <div className="cart__total">
