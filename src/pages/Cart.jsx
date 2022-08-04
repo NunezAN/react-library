@@ -1,7 +1,23 @@
 import React from "react";
 import Price from "../components/ui/Price";
+import TotalPrice from "../components/ui/TotalPrice";
 
 const Cart = ({ cart }) => {
+    let subtotal = getSubTotal();
+    let tax = getTax();
+    function getSubTotal(){
+        let subTotal = 0
+        cart.forEach(cartBook => {
+           cartBook.salePrice ? subTotal += cartBook.salePrice * cartBook.quantity : subTotal += cartBook.originalPrice * cartBook.quantity
+        });
+        return subTotal.toFixed(2);
+    }
+    function getTax(){
+        return (subtotal * .08).toFixed(2);
+    }
+    function getTotal(){
+        return ((+subtotal)+ (+tax)).toFixed(2);
+    }
   return (
     <div id="books__body">
       <main id="books__main">
@@ -17,43 +33,56 @@ const Cart = ({ cart }) => {
                 <span className="cart__price">Price</span>
               </div>
               <div className="cart__body">
-                <div className="cart__item">
-                  <div className="cart__book">
-                    <img src={cart[0].url} alt="" className="cart__book--img" />
-                    <div className="cart__book--info">
-                      <span className="cart__book--title">{cart[0].title}</span>
-                      <span className="cart__book--price">
-                        <Price
-                          originalPrice={cart[0].originalPrice}
-                          salesPrice={cart[0].salesPrice}
-                        ></Price>
-                      </span>
-                      <button className="cart__book--remove">Remove</button>
+                {cart.map((cartBook) => {
+                  return (
+                    <div className="cart__item">
+                      <div className="cart__book">
+                        <img
+                          src={cartBook.url}
+                          alt=""
+                          className="cart__book--img"
+                        />
+                        <div className="cart__book--info">
+                          <span className="cart__book--title">
+                            {cartBook.title}
+                          </span>
+                          <span className="cart__book--price">
+                            <Price
+                              originalPrice={cartBook.originalPrice}
+                              salePrice={cartBook.salePrice}
+                            ></Price>
+                          </span>
+                          <button className="cart__book--remove">Remove</button>
+                        </div>
+                      </div>
+                      <div className="cart__quantity">
+                        <input
+                          type="number"
+                          min={0}
+                          max={99}
+                          className="cart__input"
+                          value={cartBook.quantity}
+                        ></input>
+                      </div>
+                      <div className="cart__total">
+                        {<TotalPrice book={cartBook} />}
+                      </div>
                     </div>
-                  </div>
-                  <div className="cart__quantity">
-                    <input
-                      type="number"
-                      min={0}
-                      max={99}
-                      className="cart__input"
-                    ></input>
-                  </div>
-                  <div className="cart__total">${cart[0].originalPrice}.00</div>
-                </div>
+                  );
+                })}
               </div>
               <div className="total">
                 <div className="total__item total__sub-total">
                   <span>Subtotal</span>
-                  <span>$9.00</span>
+                  <span>${subtotal}</span>
                 </div>
                 <div className="total__item total__tax">
                   <span>Tax</span>
-                  <span>$1.00</span>
+                  <span>${tax}</span>
                 </div>
                 <div className="total__item total__price">
                   <span>Total</span>
-                  <span>$100.00</span>
+                  <span>${getTotal()}</span>
                 </div>
                 <button
                   className="btn btn__checkout no-cursor"
