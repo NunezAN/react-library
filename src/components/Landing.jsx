@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UndrawBooks from "../assets/Undraw_Books.svg";
+import UndrawMovie from "../assets/undraw_home_cinema_l7yl.svg";
 
 const Landing = () => {
     return (
@@ -8,14 +8,14 @@ const Landing = () => {
             <header>
                 <div className="header__container">
                     <div className="header__description">
-                        <h1>Australias most awarded online library platform</h1>
-                        <h2>Find your dream book with <span className='purple'>Library</span></h2>
+                        <h1>American-based provider for home movie enthusiasts</h1>
+                        <h2>Find your dream movie with <span className='purple'>Blockbuster</span></h2>
                         <a href="#features">
-                            <button className="btn">Browse Books</button>
+                            <button className="btn">Browse Movies</button>
                         </a>
                     </div>
                     <figure className="header__img--wrapper">
-                        <img src={UndrawBooks} alt="" />
+                        <img src={UndrawMovie} alt="" />
                     </figure>
                 </div>
             </header>

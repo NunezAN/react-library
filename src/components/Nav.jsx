@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LibraryLogo from "../assets/Library.svg";
+import Logo from "../assets/Blockbuster_logo.png"
 import { Link } from "react-router-dom";
 
 const Nav = ({quantity}) => {
@@ -15,7 +16,7 @@ const Nav = ({quantity}) => {
     <nav>
       <div className="nav__container">
         <Link to="/">
-          <img src={LibraryLogo} alt="" className="logo" />
+          <img src={Logo} alt="" className="logo" />
         </Link>
         <ul className="nav__links">
           <li className="nav__list">
@@ -25,7 +26,7 @@ const Nav = ({quantity}) => {
           </li>
           <li className="nav__list">
             <Link to="/books" className="nav__link">
-              Books
+              Movies
             </Link>
           </li>
           <button className="btn__menu" onClick={openMenu}>

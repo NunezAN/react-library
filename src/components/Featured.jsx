@@ -14,7 +14,7 @@ const Featured = () => {
             <div className="containe">
                 <div className="row">
                     <h2 className="section__title">
-                        Featured <span className='purple'>Books</span>
+                        Featured <span className='purple'>Movies</span>
                     </h2>
                     <div className="books">
                         {getFeatured()}

@@ -32,14 +32,14 @@ const Cart = ({ cart, updateQuantity, removeBook }) => {
             </div>
             <div className="cart">
               <div className="cart__header">
-                <span className="cart__book">Book</span>
+                <span className="cart__book">Movie</span>
                 <span className="cart__quantity">Quantity</span>
                 <span className="cart__price">Price</span>
               </div>
               <div className="cart__body">
                 {cart.map((cartBook) => {
                   return (
-                    <div className="cart__item">
+                    <div key={cartBook.id} className="cart__item">
                       <div className="cart__book">
                         <img
                           src={cartBook.url}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from "../assets/Library.svg"
+import Logo from "../assets/Blockbuster_logo.png"
 
 const Footer = () => {
     return (
@@ -15,11 +15,11 @@ const Footer = () => {
                     <div className="footer__list">
                         <Link to="/" className="footer__link">Home</Link>
                         <span className="footer__link no-cursor">About</span>
-                        <Link to="/books" className='footer__link'>Books</Link>
+                        <Link to="/books" className='footer__link'>Movies</Link>
                         <Link to="/cart" className='footer__link'>Cart</Link>
                     </div>
                     <div className="footer__copyright">
-                        Copyright &copy; 2022 Library
+                        Copyright &copy; 2022 Movie Library
                     </div>
                 </div>
             </div>
