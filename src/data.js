@@ -18,7 +18,7 @@ export const books = [
     salePrice: null,
     rating: 5,
     description:
-      "he aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+      "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
   },
   {
     id: 3,
